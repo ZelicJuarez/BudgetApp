@@ -26,8 +26,8 @@ var budgetController = (function() {
   };
 
   /*  var allExpenses = [];
-  var allIncomes = [];
-  var totalExpenses = 0; */
+    var allIncomes = [];
+    var totalExpenses = 0; */
 
   var calculateTotal = function(type) {
     var sum = 0;
@@ -311,6 +311,20 @@ var UIController = (function() {
       document.querySelector(DOMstrings.inputBtn).classList.toggle("red");
     },
 
+    /* highlightError: function(obj) {
+      if (obj.description === "") {
+        document
+          .querySelector(DOMstrings.inputDescription)
+          .classList.toggle("red-focus");
+        console.log("Check description");
+      } else if (obj.value === isNaN || obj.value <= 0) {
+        document
+          .querySelector(DOMstrings.inputValue)
+          .classList.toggle("red-focus");
+        console.log("Check value");
+      }
+    }, */
+
     getDOMstrings: function() {
       return DOMstrings;
     }
@@ -375,7 +389,9 @@ var controller = (function(budgetCtrl, UICtrl) {
       updateBudget();
       // 6. Calculate and Update percentages
       updatePercentages();
-    }
+    } /* else {
+      UICtrl.highlightError(input);
+    } */
   };
 
   var ctrlDeleteItem = function(event) {
